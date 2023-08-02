@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FamilyDetailsFormIterativeFields from "./FamilyDetailsFormIterativeFields";
 
-const PremiumForm = () => {
+const FamilyDetailsForm = () => {
   const [childrenData, setChildrenData] = useState();
   const [adultData, setAdultData] = useState();
   const [insuredAmount, setInsuredAmount] = useState();
@@ -38,6 +38,7 @@ const PremiumForm = () => {
             return setInsuredAmount(event.target.value);
           }}
         >
+          <option>Select</option>
           <option value="1">300000</option>
           <option value="2">400000</option>
           <option value="3">500000</option>
@@ -46,6 +47,7 @@ const PremiumForm = () => {
       <Form.Group className="mb-1 d-flex justify-content-start">
         <Form.Label>City Tier</Form.Label>
         <Form.Select aria-label="Default select example" value={cityTier}>
+          <option>Select</option>
           <option value="1">Tier1</option>
           <option value="2">Tier2</option>
         </Form.Select>
@@ -53,6 +55,7 @@ const PremiumForm = () => {
       <Form.Group className="mb-1 d-flex justify-content-start">
         <Form.Label>Tenure</Form.Label>
         <Form.Select aria-label="Default select example" value={tenure}>
+          <option>Select</option>
           <option value="1">1 yr</option>
           <option value="2">2 yr</option>
         </Form.Select>
@@ -62,4 +65,4 @@ const PremiumForm = () => {
   );
 };
 
-export default PremiumForm;
+export default FamilyDetailsForm;

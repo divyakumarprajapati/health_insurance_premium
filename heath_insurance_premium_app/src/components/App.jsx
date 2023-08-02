@@ -2,7 +2,8 @@ import "./App.css";
 import Header from "./Header";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import PremiumForm from "./FamilyDetailsForm/FamilyDetailsForm";
+import FamilyDetailsForm from "./FamilyDetailsForm/FamilyDetailsForm";
+import PremiumPlanTable from "./PremiumPlanTable/PremiumPlanTable";
 
 function App() {
   return (
@@ -10,9 +11,11 @@ function App() {
       <Header />
       <Row>
         <Col>
-          <PremiumForm />
+          <FamilyDetailsForm />
         </Col>
-        <Col>2 of 2</Col>
+        <Col>
+          <PremiumPlanTable />
+        </Col>
       </Row>
     </div>
   );
