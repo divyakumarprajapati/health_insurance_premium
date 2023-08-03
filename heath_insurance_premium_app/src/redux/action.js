@@ -3,11 +3,11 @@ import {
   GET_ALL_CART_PREMIUM,
   ADD_PREMIUM_TO_CART,
 } from "./actionTypes";
-// import axios from "axios";
+import axios from "axios";
 import data from "../components/premium_plan/mock_data.json";
 import allPremiums from "./premium_mock_data.json";
 
-// const API = "http://localhost:5000/";
+const API = "http://localhost:8080";
 
 const getPremium = (premium) => {
   return {
@@ -32,11 +32,26 @@ const addPremium = (premium) => {
 
 export const fetchPremium = () => {
   return async function (dispatch) {
-    await dispatch(getPremium(data));
-    // axios
-    //   .get(`${API}/premium`)
-    //   .then((res) => dispatch(getPremium(res.data)))
-    //   .catch((err) => console.error(err));
+    await axios
+      .post(
+        `${API}/premium`,
+        JSON.stringify({
+          members: [
+            { name: "name1", age: 12 },
+            { name: "name2", age: 32 },
+          ],
+          city_tier: 1,
+          sum_insured: 300000,
+          tenure: 1,
+        }),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => dispatch(getPremium(res.data)))
+      .catch((err) => console.error(err));
   };
 };
 

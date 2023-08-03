@@ -3,3 +3,4 @@ flask_pymongo
 pandas
 openpyxl
 python-dotenv
+flask_cors
