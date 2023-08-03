@@ -46,7 +46,7 @@ const PremiumPlanTable = (props) => {
                 variant="link"
                 size="sm"
                 onClick={async () => {
-                  await dispatch(addPremiumToCart());
+                  await dispatch(addPremiumToCart(props.premium));
                   navigate("/checkout");
                 }}
               >

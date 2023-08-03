@@ -6,8 +6,7 @@ import { Col } from "react-bootstrap";
 
 const CheckoutPage = () => {
   const [purchaseSuccessful, setPurchaseSuccessful] = useState(false);
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setPurchaseSuccessful(true);
   };
   const state = useSelector((state) => state.premiumReducer);
