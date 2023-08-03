@@ -2,8 +2,8 @@ import "./App.css";
 import Header from "./Header";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import FamilyDetailsForm from "./FamilyDetailsForm/FamilyDetailsForm";
-import PremiumPlan from "./PremiumPlanTable/PremiumPlan";
+import FamilyDetailsForm from "./family_details_form/FamilyDetailsForm";
+import PremiumPlan from "./premium_plan_table/PremiumPlan";
 import { Provider } from "react-redux";
 import store from "../redux/store";
 
