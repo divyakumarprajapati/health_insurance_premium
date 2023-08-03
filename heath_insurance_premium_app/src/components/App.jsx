@@ -5,6 +5,8 @@ import store from "../redux/store";
 import HomePage from "./pages/HomePage";
 import { Routes, Route } from "react-router-dom";
 import InitialPage from "./pages/InitialPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<InitialPage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/cart"></Route>
+          <Route path="/cart" element={<CartPage />}></Route>
+          <Route path="/checkout" element={<CheckoutPage />}></Route>
         </Routes>
       </Provider>
     </div>

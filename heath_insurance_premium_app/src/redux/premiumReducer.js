@@ -7,6 +7,7 @@ import {
 const initialState = {
   premium: {},
   allPremiums: [],
+  checkoutPremium: {},
 };
 
 const premiumReducer = (state = initialState, action) => {
@@ -26,6 +27,7 @@ const premiumReducer = (state = initialState, action) => {
       return {
         ...state,
         allPremiums: [...state.allPremiums, action.payload],
+        checkoutPremium: action.payload,
       };
     default:
       return state;

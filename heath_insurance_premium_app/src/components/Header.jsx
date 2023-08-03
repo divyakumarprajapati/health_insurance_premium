@@ -1,16 +1,17 @@
 import React from "react";
-import { Navbar, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Navbar, Container, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <Navbar className="bg-body-tertiary ">
       <Container className="justify-content-between">
         <Navbar.Brand href="#home">Get Premium</Navbar.Brand>
-        <Link variant="link" to="cart">
+        <Button variant="link" onClick={() => navigate("cart")}>
           Cart
-        </Link>
+        </Button>
       </Container>
     </Navbar>
   );

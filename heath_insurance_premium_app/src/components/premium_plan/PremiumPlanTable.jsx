@@ -1,7 +1,12 @@
 import React from "react";
 import { Table, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addPremiumToCart } from "../../redux/action";
 
 const PremiumPlanTable = (props) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const rowData = [
     { name: "Base Rate", key: "base_rate" },
     {
@@ -37,7 +42,14 @@ const PremiumPlanTable = (props) => {
             <td>Total</td>
             <td>{props.premium.total}</td>
             <td>
-              <Button variant="link" size="sm">
+              <Button
+                variant="link"
+                size="sm"
+                onClick={async () => {
+                  await dispatch(addPremiumToCart());
+                  navigate("/checkout");
+                }}
+              >
                 Add to cart
               </Button>
             </td>
