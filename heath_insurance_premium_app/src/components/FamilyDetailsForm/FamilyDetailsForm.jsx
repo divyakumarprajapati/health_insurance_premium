@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FamilyDetailsFormIterativeFields from "./FamilyDetailsFormIterativeFields";
+import { useDispatch } from "react-redux";
+import { fetchPremium } from "../../redux/action";
 
 const FamilyDetailsForm = () => {
   const [childrenData, setChildrenData] = useState();
@@ -10,9 +12,11 @@ const FamilyDetailsForm = () => {
   const [insuredAmount, setInsuredAmount] = useState();
   const [cityTier] = useState();
   const [tenure] = useState();
+  const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();
+    dispatch(fetchPremium());
     console.log(childrenData, adultData, insuredAmount);
   };
   return (
