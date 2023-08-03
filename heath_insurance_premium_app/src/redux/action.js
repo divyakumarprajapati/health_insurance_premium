@@ -4,7 +4,7 @@ import {
   ADD_PREMIUM_TO_CART,
 } from "./actionTypes";
 import axios from "axios";
-import data from "../components/premium_plan_table/mock_data.json";
+import data from "../components/premium_plan/mock_data.json";
 
 const API = "http://localhost:5000/";
 
